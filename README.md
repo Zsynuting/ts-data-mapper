@@ -35,6 +35,10 @@ const mapper = new Mapper(Model, Entity)
 ```
 mapper.directMap('name').map('otherInfo', (model) => JSON.stringify(model.otherInfo));
 ```
+if it has a bunch of property to map directly, you can also do below.
+```
+mapper.directMap(['name', 'gender'])
+```
 4. map a source object to a target.
 ```
 const model = new Model();
