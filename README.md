@@ -59,7 +59,7 @@ class Entity {
   //...
 
   toModel(): Model {
-    const mapper = new Mapper(Model, Entity).directMap('name').map('otherInfo', (model) => JSON.parse(model.otherInfo));
+    const mapper = new Mapper(Entity, Model).directMap('name').map('otherInfo', (model) => JSON.parse(model.otherInfo));
     return mapper.exec(this);
   }
 }
