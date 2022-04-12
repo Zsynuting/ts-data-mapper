@@ -85,9 +85,6 @@ export class Mapper<TSource, TTarget> {
    * @returns 
    */
   exec(source: TSource): TTarget {
-    if (!(source instanceof this.sourceType)) {
-      throw new Error(`parameter [source] is instance of ${this.sourceType}`);
-    }
     const target = new this.targetType();
     this.mappings.forEach((mapping) => {
       const mappingResult = mapping.mappingFn(source);
